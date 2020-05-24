@@ -4,7 +4,12 @@ import UsersList from "./Components/UsersList"
 import CustomSegment from "./Components/CustomSegment"
 function App() {
   return (
-    <div className="container fluid">
+    <div className="container-fluid">
+      <div className="row">
+        <div className="col-md-12">
+          <img class="ui centered medium image" alt="header" src="/images/header.png" />
+        </div>
+      </div>
       <div className="row">
         <div className="col-md-3">
           <CustomSegment>
