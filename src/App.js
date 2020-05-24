@@ -1,18 +1,23 @@
 import React from 'react';
 import './App.css';
-
+import UsersList from "./Components/UsersList"
+import CustomSegment from "./Components/CustomSegment"
 function App() {
   return (
     <div className="container fluid">
       <div className="row">
         <div className="col-md-3">
-          <div className="ui segment"></div>
+          <CustomSegment>
+            <UsersList />
+          </CustomSegment>
         </div>
         <div className="col-md-9">
-          <div className="ui segment"></div>
+          <CustomSegment>
+            <p>User Details</p>
+          </CustomSegment>
         </div>
-      </div>
-    </div>
+      </div >
+    </div >
   );
 }
 
