@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import UsersList from "./Components/UsersList"
 import CustomSegment from "./Components/CustomSegment"
+import UserDetails from "./Components/UserDetails"
 function App() {
   return (
     <div className="container-fluid">
@@ -18,7 +19,7 @@ function App() {
         </div>
         <div className="col-md-9">
           <CustomSegment>
-            <p>User Details</p>
+            <UserDetails />
           </CustomSegment>
         </div>
       </div >
