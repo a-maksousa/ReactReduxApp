@@ -8,3 +8,10 @@ export const GetUsers = () => async dispatch => {
     })
 }
 
+export const SelectUser = (intUserID) => {
+    return {
+        type:"SELECT_USER",
+        payload: intUserID
+    }
+}
+

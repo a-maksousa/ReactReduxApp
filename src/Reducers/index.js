@@ -7,6 +7,14 @@ const Users = (lstUsers = [], action) => {
     return lstUsers;
 }
 
+const SelectedUser = (intSelectedUser = -1, action) => {
+    if (action.type === "SELECT_USER") {
+        return action.payload;
+    }
+    return intSelectedUser;
+}
+
 export default combineReducers({
-    Users
+    Users,
+    SelectedUser
 })

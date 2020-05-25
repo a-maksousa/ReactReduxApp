@@ -1,6 +1,7 @@
 import React from "react"
-
-export default class UserListItem extends React.Component {
+import { connect } from "react-redux"
+import { SelectUser } from "../Actions"
+class UserListItem extends React.Component {
 
     render() {
         return (
@@ -12,9 +13,16 @@ export default class UserListItem extends React.Component {
                 </a>
 
                 <div class="ui divider"></div>
-                <button class="ui secondary basic button">More Info</button>
+                <button onClick={() => this.props.SelectUser(this.props.user.id)} class="ui secondary basic button">More Info</button>
             </div>
         )
     }
 }
 
+const mapStateToProps = (state) => {
+    return {
+        SelectedUser: state.SelectedUser
+    }
+}
+
+export default connect(mapStateToProps, { SelectUser })(UserListItem)
