@@ -11,12 +11,6 @@ export const GetUsers = () => async dispatch => {
 
 export const GetUserDetails = (intUserID) => async dispatch => {
     const response = await axios.get(`https://jsonplaceholder.typicode.com/users/${intUserID}`)
-    if(response.data){
-        console.log("Done")
-    }
-    else{
-        console.log("Waiting ...")
-    }
     response.data.image = {
         url: faker.image.avatar(), alt: faker.image.alt
     }

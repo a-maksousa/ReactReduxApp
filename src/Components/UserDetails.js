@@ -19,37 +19,37 @@ class UserDetails extends React.Component {
 
             return (
                 <div>
-                    <img class="ui small left floated image" src={this.props.UserDetails.image.url} alt={this.props.UserDetails.image.alt} />
+                    <img className="ui small left floated image" src={this.props.UserDetails.image.url} alt={this.props.UserDetails.image.alt} />
                     <h2 className="ui header" style={{ margin: 0 }}>{this.props.UserDetails.name} </h2>
 
-                    <div class="ui list" style={{ display: "grid" }}>
-                        <div class="item">
-                            <i class="mobile alternate icon"></i>
-                            <div class="content">
+                    <div className="ui list" style={{ display: "grid" }}>
+                        <div className="item">
+                            <i className="mobile alternate icon"></i>
+                            <div className="content">
                                 {this.props.UserDetails.phone}
                             </div>
                         </div>
-                        <div class="item">
-                            <i class="map marker alternate icon"></i>
-                            <div class="content">
+                        <div className="item">
+                            <i className="map marker alternate icon"></i>
+                            <div className="content">
                                 {this.props.UserDetails.fullAddress}
                             </div>
                         </div>
-                        <div class="item">
-                            <i class="building outline icon"></i>
-                            <div class="content">
+                        <div className="item">
+                            <i className="building outline icon"></i>
+                            <div className="content">
                                 {this.props.UserDetails.name}
                             </div>
                         </div>
-                        <div class="item">
-                            <i class="envelope outline icon"></i>
-                            <div class="content">
+                        <div className="item">
+                            <i className="envelope outline icon"></i>
+                            <div className="content">
                                 <a href="mailto:jack@semantic-ui.com">{this.props.UserDetails.email}</a>
                             </div>
                         </div>
-                        <div class="item">
-                            <i class="linkify icon"></i>
-                            <div class="content">
+                        <div className="item">
+                            <i className="linkify icon"></i>
+                            <div className="content">
                                 <a href="http://www.semantic-ui.com">{this.props.UserDetails.website}</a>
                             </div>
                         </div>

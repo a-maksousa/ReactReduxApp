@@ -3,12 +3,12 @@ import ReactMapboxGl, { Layer, Feature } from 'react-mapbox-gl';
 
 const Map = ReactMapboxGl({ accessToken: process.env.REACT_APP_MAPBOX_TOKEN });
 const zoom = [2];
-
+const mapboxStyle = { mapbox: "mapbox://styles/mapbox/streets-v8" }
 const MapBox = (props) => {
 
     return (
         <Map
-            style="mapbox://styles/mapbox/streets-v8"
+            style={mapboxStyle.mapbox}
             zoom={zoom}
             center={[props.geo.lng, props.geo.lat]}
             containerStyle={{

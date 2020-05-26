@@ -9,12 +9,11 @@ class UserListItem extends React.Component {
             <div className="ui segment">
                 <h3 className="ui header" >{this.props.user.name}</h3>
 
-                <a class="item">
-                    <i class="map marker alternate icon"></i> {this.props.user.address.city}
-                </a>
+                <i className="map marker alternate icon"></i>
+                <span>{this.props.user.address.city}</span>
 
-                <div class="ui divider"></div>
-                <button onClick={() => this.props.GetUserDetails(this.props.user.id)} class="ui secondary basic button">More Info</button>
+                <div className="ui divider"></div>
+                <button onClick={() => this.props.GetUserDetails(this.props.user.id)} className="ui secondary basic button">More Info</button>
             </div>
         )
     }
