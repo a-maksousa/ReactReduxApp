@@ -1,7 +1,8 @@
 import React from "react"
 import { connect } from "react-redux"
 import Loader from "./Loader"
-import {GetUserDetails} from "../Actions"
+import { GetUserDetails } from "../Actions"
+import MapBox from "./MapBox"
 class UserDetails extends React.Component {
 
     componentDidMount() {
@@ -53,6 +54,9 @@ class UserDetails extends React.Component {
                             </div>
                         </div>
                     </div>
+                    <div className="ui segment">
+                        <MapBox geo={this.props.UserDetails.address.geo} />
+                    </div>
                 </div>
             )
         }
@@ -66,4 +70,4 @@ const mapStateToProps = (state) => {
 
 }
 
-export default connect(mapStateToProps,{GetUserDetails})(UserDetails)
+export default connect(mapStateToProps, { GetUserDetails })(UserDetails)
