@@ -1,6 +1,7 @@
 import React from "react"
 import { connect } from "react-redux"
-import { SelectUser } from "../Actions"
+import { GetUserDetails } from "../Actions"
+
 class UserListItem extends React.Component {
 
     render() {
@@ -13,7 +14,7 @@ class UserListItem extends React.Component {
                 </a>
 
                 <div class="ui divider"></div>
-                <button onClick={() => this.props.SelectUser(this.props.user.id)} class="ui secondary basic button">More Info</button>
+                <button onClick={() => this.props.GetUserDetails(this.props.user.id)} class="ui secondary basic button">More Info</button>
             </div>
         )
     }
@@ -25,4 +26,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, { SelectUser })(UserListItem)
+export default connect(mapStateToProps, { GetUserDetails })(UserListItem)

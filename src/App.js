@@ -8,7 +8,7 @@ function App() {
     <div className="container-fluid">
       <div className="row">
         <div className="col-md-12">
-          <img class="ui centered medium image" alt="header" src="/images/header.png" />
+          <img class="ui centered medium image" alt="header" src="/images/header.png" style={{ marginBottom: 20 }} />
         </div>
       </div>
       <div className="row">
