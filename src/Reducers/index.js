@@ -7,11 +7,20 @@ const Users = (lstUsers = [], action) => {
     return lstUsers;
 }
 
-const UserDetails = (objUserDetails = null, action) => {
-    if (action.type === "USER_DETAILS") {
-        return action.payload;
+const UserDetails = (state = { data: null, isFetching: false }, action) => {
+    if (action.type === "REGUEST_USER_DETAILS") {
+        return {
+            ...state,
+            isFetching: true
+        };
     }
-    return objUserDetails;
+    else if (action.type === "USER_DETAILS") {
+        return {
+            data: action.payload,
+            isFetching: false
+        };
+    }
+    return state;
 }
 
 export default combineReducers({

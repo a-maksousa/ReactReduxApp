@@ -3,6 +3,8 @@ import { connect } from "react-redux"
 import Loader from "./Loader"
 import { GetUserDetails } from "../Actions"
 import MapBox from "./MapBox"
+import faker from "faker"
+
 class UserDetails extends React.Component {
 
     componentDidMount() {
@@ -16,10 +18,10 @@ class UserDetails extends React.Component {
             )
         }
         else {
-
             return (
                 <div>
-                    <img className="ui small left floated image" src={this.props.UserDetails.image.url} alt={this.props.UserDetails.image.alt} />
+                    <div style={{ float: "right" }} className={this.props.isFetching ? "ui active inline loader" : "ui disabled inline loader"} />
+                    <img className="ui small left floated image" src={faker.image.avatar()} alt={faker.image.alt} />
                     <h2 className="ui header" style={{ margin: 0 }}>{this.props.UserDetails.name} </h2>
 
                     <div className="ui list" style={{ display: "grid" }}>
@@ -32,7 +34,7 @@ class UserDetails extends React.Component {
                         <div className="item">
                             <i className="map marker alternate icon"></i>
                             <div className="content">
-                                {this.props.UserDetails.fullAddress}
+                                {`${this.props.UserDetails.address.city} | ${this.props.UserDetails.address.street} | ${this.props.UserDetails.address.suite}`}
                             </div>
                         </div>
                         <div className="item">
@@ -44,13 +46,13 @@ class UserDetails extends React.Component {
                         <div className="item">
                             <i className="envelope outline icon"></i>
                             <div className="content">
-                                <a href="mailto:jack@semantic-ui.com">{this.props.UserDetails.email}</a>
+                                <a href={`mailto:${this.props.UserDetails.email}`}>{this.props.UserDetails.email}</a>
                             </div>
                         </div>
                         <div className="item">
                             <i className="linkify icon"></i>
                             <div className="content">
-                                <a href="http://www.semantic-ui.com">{this.props.UserDetails.website}</a>
+                                <a href={`http://${this.props.UserDetails.website}`} target="_blank" rel="noopener noreferrer">{this.props.UserDetails.website}</a>
                             </div>
                         </div>
                     </div>
@@ -65,7 +67,8 @@ class UserDetails extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        UserDetails: state.UserDetails
+        UserDetails: state.UserDetails.data,
+        isFetching: state.UserDetails.isFetching
     }
 
 }

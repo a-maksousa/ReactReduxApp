@@ -1,5 +1,4 @@
 import axios from "axios"
-import faker from "faker"
 
 export const GetUsers = () => async dispatch => {
     const response = await axios.get("https://jsonplaceholder.typicode.com/users");
@@ -10,11 +9,9 @@ export const GetUsers = () => async dispatch => {
 }
 
 export const GetUserDetails = (intUserID) => async dispatch => {
+    dispatch({ type: "REGUEST_USER_DETAILS" })
+
     const response = await axios.get(`https://jsonplaceholder.typicode.com/users/${intUserID}`)
-    response.data.image = {
-        url: faker.image.avatar(), alt: faker.image.alt
-    }
-    response.data.fullAddress = `${response.data.address.city} | ${response.data.address.street} | ${response.data.address.suite}`
     dispatch({
         type: "USER_DETAILS",
         payload: response.data
